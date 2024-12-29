@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+.faq-container {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f3fc;
+  background-image: url(/assets//images/background-pattern-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.faq-items {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid black; */
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.logo img {
+  width: 30px;
+}
+.faq-header {
+  font-size: 2rem;
+  color: #4c2484;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  color: #4c2484;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.faq-question:hover,
+.faq-question:focus {
+  outline: none;
+  /* color: #7a4cc2; */
+  color: hsl(292, 42%, 14%);
+}
+
+.icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: none;
+  color: #666;
+}
+
+.faq-question[aria-expanded="true"] .icon {
+  transform: rotate(45deg);
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer {
+  display: block;
+}
+
+/* Medium Screens (Tablets: 768px and smaller) */
+@media (max-width: 768px) {
+  .faq-items {
+    width: 80%;
+  }
+  .faq-question span {
+    text-align: left;
+  }
+}
+
+/* Small Screens (Mobile Phones: 480px and smaller) */
+@media (max-width: 520px) {
+  .faq-container {
+    background-image: url(/assets/images/background-pattern-mobile.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  .faq-items {
+    width: 80%;
+    /* height: 80vh; */
+  }
+  .faq-question span {
+    text-align: left;
+  }
+}
